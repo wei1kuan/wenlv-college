@@ -266,9 +266,6 @@ export default function Teaching() {
                         {achievement.category}
                       </span>
                     </div>
-                    <div className="absolute top-4 right-4 bg-heritage-gold text-heritage-primary px-3 py-1 rounded-full text-sm font-bold shadow-sm">
-                      {achievement.year}
-                    </div>
                   </div>
 
                   {/* 内容区域 */}
