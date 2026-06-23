@@ -391,11 +391,6 @@ export default function Teaching() {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-heritage-gold text-heritage-primary px-3 py-1 rounded-full text-sm font-bold shadow-sm">
-                        {exchange.type}
-                      </span>
-                    </div>
                   </div>
 
                   {/* 内容区域 */}
