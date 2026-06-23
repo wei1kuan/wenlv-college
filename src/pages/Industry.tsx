@@ -242,11 +242,6 @@ export default function Industry() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/70 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block px-3 py-1 bg-heritage-gold text-heritage-primary text-sm font-semibold rounded-full">
-                          {company.type}
-                        </span>
-                      </div>
                     </div>
                     <div className="p-5">
                       <h4 className="text-lg font-bold text-heritage-primary mb-2">
