@@ -20,16 +20,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F4E8;
+  background: #EFF6FF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C8553D;
+  background: #1E40AF;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A84430;
+  background: #1E3A8A;
 }
 
 /* 页面平滑滚动 */

@@ -9,6 +9,10 @@ export default defineConfig({
   // 例如：仓库名为 wenlv-college，则 base: '/wenlv-college/'
   // 如果使用自定义域名或用户名.gitee.io 仓库，则保持 '/'
   base: './',
+  server: {
+    port: 5173,
+    strictPort: true,
+  },
   build: {
     sourcemap: 'hidden',
   },

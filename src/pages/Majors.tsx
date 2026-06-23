@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,7 +11,7 @@ export default function Majors() {
   const otherMajors = majorsData.filter((major) => !major.isFeatured);
 
   return (
-    <div className="min-h-screen bg-heritage-light">
+    <div className="min-h-screen bg-heritage-cream">
       <Navbar />
 
       <main className="pt-24 pb-16">
@@ -32,7 +32,7 @@ export default function Majors() {
               >
                 <div className="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-heritage-red text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
+                    <span className="bg-heritage-primary text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
                       重点专业
                     </span>
                   </div>
@@ -44,17 +44,17 @@ export default function Majors() {
                         alt={featuredMajor.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-blue/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
                     </div>
 
                     <div className="p-8 flex flex-col justify-center">
-                      <h3 className="text-2xl md:text-3xl font-bold text-heritage-blue mb-4 group-hover:text-heritage-red transition-colors">
+                      <h3 className="text-2xl md:text-3xl font-bold text-heritage-primary mb-4 group-hover:text-heritage-primary transition-colors">
                         {featuredMajor.name}
                       </h3>
                       <p className="text-gray-600 leading-relaxed mb-6 text-base">
                         {featuredMajor.description}
                       </p>
-                      <div className="flex items-center text-heritage-red font-medium">
+                      <div className="flex items-center text-heritage-primary font-medium">
                         <span>了解更多</span>
                         <ArrowRight className="ml-2 w-5 h-5" />
                       </div>
@@ -85,7 +85,7 @@ export default function Majors() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-heritage-blue mb-3">
+                  <h3 className="text-xl font-bold text-heritage-primary mb-3">
                     {major.name}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
@@ -104,7 +104,7 @@ export default function Majors() {
             className="mt-16 text-center"
           >
             <div className="inline-block bg-white rounded-lg shadow-md px-8 py-6">
-              <p className="text-heritage-blue font-medium mb-2">
+              <p className="text-heritage-primary font-medium mb-2">
                 欢迎报考文旅创意学院
               </p>
               <p className="text-gray-600 text-sm">

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-heritage-light font-body">
+    <div className="min-h-screen bg-heritage-cream font-body">
       <Navbar />
       <main className="pt-16">
         <Carousel />

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { projectsData, ProjectItem } from "@/data/mockData";
 
@@ -24,7 +24,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-heritage-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
           <span className="text-white text-sm font-medium">查看详情 →</span>
@@ -32,11 +32,11 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
       
       <div className="p-5">
-        <h3 className="text-lg font-display font-bold text-heritage-blue mb-2 group-hover:text-heritage-red transition-colors">
+        <h3 className="text-lg font-display font-bold text-heritage-primary mb-2 group-hover:text-heritage-primary transition-colors">
           {project.name}
         </h3>
         
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 font-body">
+        <p className="text-heritage-primary/80 text-sm leading-relaxed line-clamp-2 font-body">
           {project.description}
         </p>
         
@@ -68,7 +68,7 @@ export default function ProjectsSection() {
           transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 border-2 border-heritage-red text-heritage-red rounded-full font-medium hover:bg-heritage-red hover:text-white transition-all duration-300">
+          <button className="px-8 py-3 border-2 border-heritage-primary text-heritage-primary rounded-full font-medium hover:bg-heritage-secondary hover:text-white transition-all duration-300">
             查看全部项目
           </button>
         </motion.div>

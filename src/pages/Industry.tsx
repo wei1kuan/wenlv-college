@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionTitle from "@/components/SectionTitle";
-import { Building2, Briefcase, MapPin, Award, Users, Lightbulb } from "lucide-react";
+import { Building2, Briefcase, MapPin, Award, Lightbulb } from "lucide-react";
 
 // 页面淡入动画配置
 const pageVariants = {
@@ -171,39 +171,31 @@ const innovationAchievements = [
   {
     id: 1,
     title: "全国大学生创新创业大赛金奖",
-    year: "2024",
+    year: "2026",
     project: "楚韵工坊文创项目",
     description: "在第十届全国大学生创新创业大赛中荣获金奖。",
   },
   {
     id: 2,
     title: "湖北省互联网+大赛一等奖",
-    year: "2023",
+    year: "2026",
     project: "非遗数字博物馆",
     description: "在湖北省互联网+大学生创新创业大赛中获得一等奖。",
   },
   {
     id: 3,
     title: "文创产品专利授权",
-    year: "2023",
+    year: "2026",
     project: "荆楚纹样系列设计",
     description: "学生设计的荆楚纹样文创产品获得外观设计专利授权。",
   },
   {
     id: 4,
     title: "创业孵化成功",
-    year: "2023",
+    year: "2026",
     project: "荆楚手作工作室",
     description: "学生创业团队成功孵化，成立荆楚手作文化传播工作室。",
   },
-];
-
-// 统计数据
-const statistics = [
-  { icon: Building2, label: "合作企业", count: "50+" },
-  { icon: Briefcase, label: "合作项目", count: "120+" },
-  { icon: MapPin, label: "实习基地", count: "30+" },
-  { icon: Award, label: "创新成果", count: "80+" },
 ];
 
 export default function Industry() {
@@ -213,64 +205,12 @@ export default function Industry() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="min-h-screen bg-heritage-light font-body"
+      className="min-h-screen bg-heritage-cream font-body"
     >
       <Navbar />
-      <main className="pt-16">
-        {/* 页面头部横幅 */}
-        <section className="relative h-64 bg-gradient-to-r from-heritage-blue to-heritage-blue/80 overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNCAxNHoiIGZpbGw9IiNENEFGMzciIGZpbGwtb3BhY2l0eT0iMC4zIi8+PC9nPjwvc3ZnPg==')]" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-display font-bold text-white mb-4"
-            >
-              产教融合
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-heritage-gold font-body"
-            >
-              校企协同育人 · 实践创新成长
-            </motion.p>
-          </div>
-        </section>
-
-        {/* 统计数据展示 */}
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              variants={sectionVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
-            >
-              {statistics.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-heritage-light p-6 rounded-lg text-center border border-heritage-gold/20 hover:border-heritage-gold transition-colors duration-300"
-                >
-                  <stat.icon className="w-8 h-8 mx-auto mb-3 text-heritage-red" />
-                  <div className="text-2xl font-bold text-heritage-blue mb-1">
-                    {stat.count}
-                  </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
+      <main className="pt-24 pb-20">
         {/* 校企合作区域 */}
-        <section className="py-20 bg-heritage-light">
+        <section className="py-16 bg-heritage-cream">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionTitle title="校企合作" subtitle="携手共建 融合发展" />
 
@@ -282,34 +222,34 @@ export default function Industry() {
               viewport={{ once: true }}
               className="mt-12"
             >
-              <h3 className="text-2xl font-display font-bold text-heritage-blue mb-8 text-center">
-                <Building2 className="inline-block w-6 h-6 mr-2 text-heritage-red" />
+              <h3 className="text-2xl font-display font-bold text-heritage-primary mb-10 text-center">
+                <Building2 className="inline-block w-6 h-6 mr-2 text-heritage-primary" />
                 合作企业
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {partnerCompanies.map((company) => (
                   <motion.div
                     key={company.id}
                     variants={itemVariants}
                     whileHover={{ y: -8 }}
-                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
                   >
-                    <div className="relative h-40 overflow-hidden">
+                    <div className="relative h-44 overflow-hidden">
                       <img
                         src={company.imageUrl}
                         alt={company.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-blue/70 to-transparent" />
-                      <div className="absolute bottom-3 left-3 right-3">
-                        <span className="inline-block px-2 py-1 bg-heritage-gold text-heritage-blue text-xs font-medium rounded">
+                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/70 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <span className="inline-block px-3 py-1 bg-heritage-gold text-heritage-primary text-sm font-semibold rounded-full">
                           {company.type}
                         </span>
                       </div>
                     </div>
-                    <div className="p-4">
-                      <h4 className="text-lg font-bold text-heritage-blue mb-2">
+                    <div className="p-5">
+                      <h4 className="text-lg font-bold text-heritage-primary mb-2">
                         {company.name}
                       </h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
@@ -327,10 +267,10 @@ export default function Industry() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="mt-16"
+              className="mt-20"
             >
-              <h3 className="text-2xl font-display font-bold text-heritage-blue mb-8 text-center">
-                <Briefcase className="inline-block w-6 h-6 mr-2 text-heritage-red" />
+              <h3 className="text-2xl font-display font-bold text-heritage-primary mb-10 text-center">
+                <Briefcase className="inline-block w-6 h-6 mr-2 text-heritage-primary" />
                 合作项目
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -339,39 +279,39 @@ export default function Industry() {
                     key={project.id}
                     variants={itemVariants}
                     whileHover={{ y: -8, scale: 1.02 }}
-                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
                   >
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-52 overflow-hidden">
                       <img
                         src={project.imageUrl}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy"
                       />
                       <div className="absolute top-4 right-4">
                         <span
-                          className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          className={`px-4 py-1 rounded-full text-sm font-semibold shadow-sm ${
                             project.status === "已完成"
                               ? "bg-green-500 text-white"
-                              : "bg-heritage-red text-white"
+                              : "bg-heritage-primary text-white"
                           }`}
                         >
                           {project.status}
                         </span>
                       </div>
                     </div>
-                    <div className="p-5">
-                      <h4 className="text-lg font-bold text-heritage-blue mb-2">
+                    <div className="p-6">
+                      <h4 className="text-lg font-bold text-heritage-primary mb-2">
                         {project.title}
                       </h4>
-                      <p className="text-heritage-gold text-sm mb-3">
+                      <p className="text-heritage-primary/70 text-sm mb-3 font-medium">
                         合作单位：{project.partner}
                       </p>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         {project.description}
                       </p>
                     </div>
-                    <div className="h-1 bg-gradient-to-r from-heritage-red via-heritage-gold to-heritage-blue" />
+                    <div className="h-1 bg-gradient-to-r from-heritage-primary via-heritage-gold to-heritage-primary" />
                   </motion.div>
                 ))}
               </div>
@@ -396,7 +336,7 @@ export default function Industry() {
                   key={base.id}
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
-                  className="bg-heritage-light rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/20"
+                  className="bg-heritage-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
                 >
                   <div className="flex flex-col md:flex-row">
                     {/* 图片区域 */}
@@ -404,7 +344,7 @@ export default function Industry() {
                       <img
                         src={base.imageUrl}
                         alt={base.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-heritage-light/30 md:block hidden" />
@@ -413,13 +353,13 @@ export default function Industry() {
                     {/* 内容区域 */}
                     <div className="md:w-3/5 p-6">
                       <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="w-4 h-4 text-heritage-red" />
+                        <MapPin className="w-4 h-4 text-heritage-primary" />
                         <span className="text-sm text-gray-500">{base.location}</span>
                       </div>
-                      <h4 className="text-xl font-bold text-heritage-blue mb-2">
+                      <h4 className="text-xl font-bold text-heritage-primary mb-2">
                         {base.name}
                       </h4>
-                      <span className="inline-block px-3 py-1 bg-heritage-red/10 text-heritage-red text-sm rounded-full mb-3">
+                      <span className="inline-block px-3 py-1 bg-heritage-primary/10 text-heritage-primary text-sm rounded-full mb-3 font-medium">
                         {base.type}
                       </span>
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -429,7 +369,7 @@ export default function Industry() {
                         {base.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-heritage-gold/20 text-heritage-blue text-xs rounded-full border border-heritage-gold/30"
+                            className="px-3 py-1 bg-heritage-gold/20 text-heritage-primary text-xs rounded-full border border-heritage-gold/30 font-medium"
                           >
                             {feature}
                           </span>
@@ -444,7 +384,7 @@ export default function Industry() {
         </section>
 
         {/* 创新创业区域 */}
-        <section className="py-20 bg-heritage-light">
+        <section className="py-20 bg-heritage-cream">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionTitle title="创新创业" subtitle="激发潜能 成就梦想" />
 
@@ -456,8 +396,8 @@ export default function Industry() {
               viewport={{ once: true }}
               className="mt-12"
             >
-              <h3 className="text-2xl font-display font-bold text-heritage-blue mb-8 text-center">
-                <Lightbulb className="inline-block w-6 h-6 mr-2 text-heritage-red" />
+              <h3 className="text-2xl font-display font-bold text-heritage-primary mb-10 text-center">
+                <Lightbulb className="inline-block w-6 h-6 mr-2 text-heritage-primary" />
                 创新创业项目
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -466,22 +406,22 @@ export default function Industry() {
                     key={project.id}
                     variants={itemVariants}
                     whileHover={{ y: -8 }}
-                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
                   >
-                    <div className="relative h-44 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
                       <img
                         src={project.imageUrl}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-blue/80 to-transparent" />
-                      <div className="absolute bottom-3 left-3 right-3">
+                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
                         <span
-                          className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                          className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
                             project.status === "已孵化"
-                              ? "bg-heritage-gold text-heritage-blue"
-                              : "bg-heritage-red text-white"
+                              ? "bg-heritage-gold text-heritage-primary"
+                              : "bg-white/95 backdrop-blur-sm text-heritage-primary"
                           }`}
                         >
                           {project.status}
@@ -490,10 +430,10 @@ export default function Industry() {
                     </div>
                     <div className="p-5">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-lg font-bold text-heritage-blue">
+                        <h4 className="text-lg font-bold text-heritage-primary">
                           {project.title}
                         </h4>
-                        <span className="text-xs text-heritage-gold bg-heritage-gold/10 px-2 py-1 rounded">
+                        <span className="text-xs text-heritage-gold bg-heritage-gold/10 px-2 py-1 rounded-full font-medium">
                           {project.category}
                         </span>
                       </div>
@@ -515,10 +455,10 @@ export default function Industry() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="mt-16"
+              className="mt-20"
             >
-              <h3 className="text-2xl font-display font-bold text-heritage-blue mb-8 text-center">
-                <Award className="inline-block w-6 h-6 mr-2 text-heritage-red" />
+              <h3 className="text-2xl font-display font-bold text-heritage-primary mb-10 text-center">
+                <Award className="inline-block w-6 h-6 mr-2 text-heritage-primary" />
                 创新创业成果
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -526,17 +466,17 @@ export default function Industry() {
                   <motion.div
                     key={achievement.id}
                     variants={itemVariants}
-                    className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-heritage-gold"
+                    className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-heritage-gold"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <h4 className="text-lg font-bold text-heritage-blue">
+                      <h4 className="text-lg font-bold text-heritage-primary">
                         {achievement.title}
                       </h4>
-                      <span className="text-heritage-gold font-bold text-sm bg-heritage-gold/10 px-3 py-1 rounded">
+                      <span className="text-heritage-primary font-bold text-sm bg-heritage-gold/20 px-3 py-1 rounded-full">
                         {achievement.year}
                       </span>
                     </div>
-                    <p className="text-heritage-red text-sm mb-2">
+                    <p className="text-heritage-primary/70 text-sm mb-2 font-medium">
                       项目：{achievement.project}
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -545,44 +485,6 @@ export default function Industry() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* 合作意向区域 */}
-        <section className="py-20 bg-gradient-to-br from-heritage-blue to-heritage-blue/90">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                携手共创未来
-              </h2>
-              <p className="text-xl text-heritage-gold mb-8 font-body">
-                诚邀各界企业、机构开展产教融合合作
-              </p>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-heritage-gold" />
-                  <span>人才培养合作</span>
-                </div>
-                <div className="hidden md:block w-1 h-1 bg-heritage-gold rounded-full" />
-                <div className="flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-heritage-gold" />
-                  <span>项目研发合作</span>
-                </div>
-                <div className="hidden md:block w-1 h-1 bg-heritage-gold rounded-full" />
-                <div className="flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-heritage-gold" />
-                  <span>实习基地共建</span>
-                </div>
-              </div>
-              <p className="mt-8 text-gray-300 text-sm">
-                联系电话：027-XXXXXXXX | 邮箱：industry@wlcyxy.edu.cn
-              </p>
             </motion.div>
           </div>
         </section>

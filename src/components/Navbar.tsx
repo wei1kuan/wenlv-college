@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+﻿import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import { navItems } from '@/data/mockData';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,12 +20,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-heritage-red shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-heritage-primary shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-heritage-red font-bold text-xl">文</span>
+              <span className="text-heritage-primary font-bold text-xl">文</span>
             </div>
             <div className="hidden sm:block">
               <h1 className="text-white font-display font-bold text-lg">文旅创意学院</h1>
@@ -34,34 +35,53 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <div key={item.id} className="relative group">
+              <div
+                key={item.id}
+                className="relative"
+                onMouseEnter={() => item.children && setActiveDropdown(item.id)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
                 <Link
                   to={item.path}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'bg-white text-heritage-red'
+                  className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    location.pathname === item.path || activeDropdown === item.id
+                      ? 'bg-white text-heritage-primary'
                       : 'text-white hover:bg-white/20'
                   }`}
                 >
                   {item.name}
+                  {item.children && (
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${
+                      activeDropdown === item.id ? 'rotate-180' : ''
+                    }`} />
+                  )}
                 </Link>
                 
                 {item.children && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg overflow-hidden hidden group-hover:block z-50"
-                  >
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.id}
-                        to={child.path}
-                        className="block px-4 py-2 text-sm text-heritage-blue hover:bg-heritage-light transition-colors"
+                  <AnimatePresence>
+                    {activeDropdown === item.id && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        className="absolute top-full left-0 min-w-56 bg-white shadow-xl rounded-lg overflow-hidden z-50 mt-1"
                       >
-                        {child.name}
-                      </Link>
-                    ))}
-                  </motion.div>
+                        <div className="py-2">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.id}
+                              to={child.path}
+                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-heritage-primary/10 hover:text-heritage-primary transition-colors duration-150"
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 )}
               </div>
             ))}
@@ -89,7 +109,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === item.path
-                      ? 'bg-white text-heritage-red'
+                      ? 'bg-white text-heritage-primary'
                       : 'text-white hover:bg-white/20'
                   }`}
                 >

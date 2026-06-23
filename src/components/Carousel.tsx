@@ -12,15 +12,15 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    imageUrl: '/1.PNG',
-    title: '叶画展厅',
-    subtitle: '荆楚非遗传承与创新实践中心'
+    imageUrl: '/2.jpg',
+    title: '非遗文化展示馆',
+    subtitle: '传承荆楚文脉 弘扬非遗技艺'
   },
   {
     id: 2,
-    imageUrl: '/2.jpg',
-    title: '非遗展厅',
-    subtitle: '传承荆楚传统技艺 培育文创设计人才'
+    imageUrl: '/1.PNG',
+    title: '叶画特色展厅',
+    subtitle: '匠心独具 一叶一世界'
   }
 ];
 
@@ -58,20 +58,37 @@ export default function Carousel() {
             alt={slides[currentIndex].title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-heritage-blue/80 via-heritage-blue/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
           
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-12">
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{ x: -30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
+              className="max-w-lg"
             >
-              <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-heritage-gold mb-4 drop-shadow-lg">
+              {/* 左侧装饰 */}
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-px bg-white/80" />
+                <div className="w-2 h-2 border-t border-l border-white/60 rotate-45 ml-3" />
+              </div>
+              
+              <motion.h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white drop-shadow-lg tracking-wider mb-3">
                 {slides[currentIndex].title}
               </motion.h2>
-              <motion.p className="text-xl md:text-2xl text-white/90 font-body">
+              
+              {/* 分隔线 */}
+              <div className="w-24 h-px bg-gradient-to-r from-white/80 to-white/30 mb-3" />
+              
+              <motion.p className="text-base md:text-lg text-white/90 font-body tracking-wide">
                 {slides[currentIndex].subtitle}
               </motion.p>
+              
+              {/* 底部装饰 */}
+              <div className="flex items-center mt-4">
+                <div className="w-2 h-2 border-b border-r border-white/60 rotate-45" />
+                <div className="w-12 h-px bg-white/80 ml-3" />
+              </div>
             </motion.div>
           </div>
         </motion.div>
