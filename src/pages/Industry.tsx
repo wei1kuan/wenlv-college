@@ -283,17 +283,6 @@ export default function Industry() {
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         loading="lazy"
                       />
-                      <div className="absolute top-4 right-4">
-                        <span
-                          className={`px-4 py-1 rounded-full text-sm font-semibold shadow-sm ${
-                            project.status === "已完成"
-                              ? "bg-green-500 text-white"
-                              : "bg-heritage-primary text-white"
-                          }`}
-                        >
-                          {project.status}
-                        </span>
-                      </div>
                     </div>
                     <div className="p-6">
                       <h4 className="text-lg font-bold text-heritage-primary mb-2">
