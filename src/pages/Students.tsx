@@ -315,13 +315,9 @@ export default function Students() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/85 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">
+                      <h3 className="text-xl font-bold text-white">
                         {club.name}
                       </h3>
-                      <div className="flex items-center text-heritage-gold text-sm font-medium">
-                        <Users className="w-4 h-4 mr-1" />
-                        {club.members} 名成员
-                      </div>
                     </div>
                   </div>
 
