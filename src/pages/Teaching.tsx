@@ -336,13 +336,6 @@ export default function Teaching() {
                         <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs">
                           {project.category}
                         </span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          project.status === "在研"
-                            ? "bg-green-100 text-green-700"
-                            : "bg-gray-100 text-gray-600"
-                        }`}>
-                          {project.status}
-                        </span>
                       </div>
 
                       {/* 标题 */}
@@ -357,11 +350,7 @@ export default function Teaching() {
                     </div>
 
                     {/* 底部信息 */}
-                    <div className="flex items-center justify-between text-sm text-gray-500 pt-3 border-t border-gray-100">
-                      <div className="flex items-center gap-1">
-                        <Users className="w-4 h-4 text-heritage-primary" />
-                        <span>{project.leader}</span>
-                      </div>
+                    <div className="flex items-center justify-end text-sm text-gray-500 pt-3 border-t border-gray-100">
                       <div className="flex items-center gap-1">
                         <GraduationCap className="w-4 h-4 text-heritage-primary" />
                         <span>{project.year}</span>
