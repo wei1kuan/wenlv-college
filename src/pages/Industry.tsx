@@ -400,17 +400,6 @@ export default function Industry() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span
-                          className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
-                            project.status === "已孵化"
-                              ? "bg-heritage-gold text-heritage-primary"
-                              : "bg-white/95 backdrop-blur-sm text-heritage-primary"
-                          }`}
-                        >
-                          {project.status}
-                        </span>
-                      </div>
                     </div>
                     <div className="p-5">
                       <div className="flex items-center justify-between mb-2">
