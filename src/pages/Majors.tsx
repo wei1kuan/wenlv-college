@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,8 +7,20 @@ import { majorsData } from "@/data/mockData";
 import { ArrowRight } from "lucide-react";
 
 export default function Majors() {
-  const featuredMajor = majorsData.find((major) => major.isFeatured);
-  const otherMajors = majorsData.filter((major) => !major.isFeatured);
+  // 将专业分组为三行
+  const firstRow = majorsData.filter(m => 
+    m.name === "数字非遗设计与制作" || 
+    m.name === "环境艺术设计" || 
+    m.name === "产品艺术设计"
+  );
+  const secondRow = majorsData.filter(m => 
+    m.name === "旅游管理" || 
+    m.name === "酒店管理与数字化运营"
+  );
+  const thirdRow = majorsData.filter(m => 
+    m.name === "播音与主持" || 
+    m.name === "表演艺术"
+  );
 
   return (
     <div className="min-h-screen bg-heritage-cream">
@@ -18,55 +30,51 @@ export default function Majors() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle title="专业设置" subtitle="传承荆楚文化，培养创新人才" />
 
-          {featuredMajor && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mb-12"
-            >
-              <Link
-                to={featuredMajor.detailPath || "#"}
-                className="block group"
+          {/* 第一行：3个专业 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {firstRow.map((major, index) => (
+              <motion.div
+                key={major.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-heritage-primary text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg">
-                      重点专业
-                    </span>
+                <Link to={major.detailPath || "#"} className="block group">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={major.imageUrl}
+                      alt={major.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
                   </div>
+                </Link>
 
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="relative h-64 md:h-80 overflow-hidden">
-                      <img
-                        src={featuredMajor.imageUrl}
-                        alt={featuredMajor.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
-                    </div>
-
-                    <div className="p-8 flex flex-col justify-center">
-                      <h3 className="text-2xl md:text-3xl font-bold text-heritage-primary mb-4 group-hover:text-heritage-primary transition-colors">
-                        {featuredMajor.name}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6 text-base">
-                        {featuredMajor.description}
-                      </p>
-                      <div className="flex items-center text-heritage-primary font-medium">
-                        <span>了解更多</span>
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </div>
-                    </div>
-                  </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-heritage-primary mb-3 group-hover:text-heritage-primary transition-colors">
+                    {major.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    {major.description}
+                  </p>
+                  <Link 
+                    to={major.detailPath || "#"} 
+                    className="mt-3 flex items-center text-heritage-primary text-sm font-medium hover:underline"
+                  >
+                    <span>了解更多</span>
+                    <ArrowRight className="ml-1 w-4 h-4" />
+                  </Link>
                 </div>
-              </Link>
-            </motion.div>
-          )}
+              </motion.div>
+            ))}
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherMajors.map((major, index) => (
+          {/* 第二行：2个专业 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+            {secondRow.map((major, index) => (
               <motion.div
                 key={major.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -82,6 +90,40 @@ export default function Majors() {
                     alt={major.name}
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-heritage-primary mb-3">
+                    {major.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                    {major.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* 第三行：2个专业 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+            {thirdRow.map((major, index) => (
+              <motion.div
+                key={major.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={major.imageUrl}
+                    alt={major.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
                 </div>
 
                 <div className="p-6">

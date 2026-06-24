@@ -247,7 +247,6 @@ export const majorsData: MajorItem[] = [
     name: "数字非遗设计与制作",
     description: "本专业是学院重点建设专业，融合数字技术与非遗文化传承，培养具备传统工艺数字化保护、非遗文创产品设计、数字展示交互设计能力的复合型人才。学生将学习3D建模、虚拟现实、数字影像等前沿技术，同时深入掌握荆楚传统工艺精髓。",
     imageUrl: "https://picsum.photos/seed/wenlv-5/600/400",
-    isFeatured: true,
     detailPath: "/majors/digital-heritage",
   },
   {
