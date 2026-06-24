@@ -73,7 +73,7 @@ export default function Majors() {
           </div>
 
           {/* 第二行：2个专业 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             {secondRow.map((major, index) => (
               <motion.div
                 key={major.id}
@@ -103,10 +103,11 @@ export default function Majors() {
                 </div>
               </motion.div>
             ))}
+            <div className="hidden md:block" />
           </div>
 
           {/* 第三行：2个专业 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             {thirdRow.map((major, index) => (
               <motion.div
                 key={major.id}
@@ -136,6 +137,7 @@ export default function Majors() {
                 </div>
               </motion.div>
             ))}
+            <div className="hidden md:block" />
           </div>
 
           <motion.div
