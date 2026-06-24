@@ -26,8 +26,8 @@ export default function Majors() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle title="专业设置" subtitle="传承荆楚文化，培养创新人才" />
 
-          {/* 单列竖向排列 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* 单列竖向排列，每排一个 */}
+          <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
             {orderedMajors.map((major, index) => (
               <motion.div
                 key={major.id}
@@ -35,43 +35,40 @@ export default function Majors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex"
               >
-                {major.detailPath && (
-                  <Link to={major.detailPath} className="block group">
-                    <div className="relative h-48 overflow-hidden">
+                <div className="w-1/2 min-w-[200px] relative overflow-hidden flex-shrink-0">
+                  {major.detailPath && (
+                    <Link to={major.detailPath} className="block h-full">
                       <img
                         src={major.imageUrl}
                         alt={major.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
-                    </div>
-                  </Link>
-                )}
-                {!major.detailPath && (
-                  <div className="relative h-48 overflow-hidden">
+                    </Link>
+                  )}
+                  {!major.detailPath && (
                     <img
                       src={major.imageUrl}
                       alt={major.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/30 to-transparent" />
-                  </div>
-                )}
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-r from-heritage-primary/40 to-transparent" />
+                </div>
 
-                <div className="p-6">
+                <div className="w-1/2 p-6 flex flex-col justify-center">
                   <h3 className="text-xl font-bold text-heritage-primary mb-3">
                     {major.name}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-gray-600 text-sm leading-relaxed">
                     {major.description}
                   </p>
                   {major.detailPath && (
                     <Link 
                       to={major.detailPath} 
-                      className="mt-3 flex items-center text-heritage-primary text-sm font-medium hover:underline"
+                      className="mt-4 flex items-center text-heritage-primary text-sm font-medium hover:underline self-start"
                     >
                       <span>了解更多</span>
                       <ArrowRight className="ml-1 w-4 h-4" />
