@@ -23,11 +23,11 @@ export default function Majors() {
       <Navbar />
 
       <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <SectionTitle title="专业设置" subtitle="传承荆楚文化，培养创新人才" />
 
           {/* 单列竖向排列，每排一个，卡片与页面对齐 */}
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 w-full">
             {orderedMajors.map((major, index) => (
               <motion.div
                 key={major.id}
