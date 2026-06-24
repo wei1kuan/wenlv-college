@@ -78,23 +78,6 @@ export default function Majors() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-16 text-center"
-          >
-            <div className="inline-block bg-white rounded-lg shadow-md px-8 py-6">
-              <p className="text-heritage-primary font-medium mb-2">
-                欢迎报考文旅创意学院
-              </p>
-              <p className="text-gray-600 text-sm">
-                各专业招生详情请咨询招生办公室：027-XXXXXXXX
-              </p>
-            </div>
-          </motion.div>
         </div>
       </main>
 
