@@ -2,7 +2,7 @@
 
 interface SectionTitleProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 export default function SectionTitle({ title, subtitle }: SectionTitleProps) {
@@ -26,12 +26,14 @@ export default function SectionTitle({ title, subtitle }: SectionTitleProps) {
         <h2 className="text-3xl md:text-4xl font-display font-bold text-heritage-primary tracking-wide">
           {title}
         </h2>
-        <p className="mt-4 text-lg text-heritage-secondary font-body">
-          {subtitle}
-        </p>
+        {subtitle && (
+          <p className="mt-4 text-lg text-heritage-secondary font-body">
+            {subtitle}
+          </p>
+        )}
         
         {/* 底部装饰线条 */}
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className={`flex items-center justify-center gap-3 ${subtitle ? 'mt-4' : 'mt-6'}`}>
           <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-heritage-secondary" />
           <div className="w-2 h-2 bg-heritage-secondary rounded-full" />
           <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-heritage-secondary" />
