@@ -26,8 +26,8 @@ export default function Majors() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle title="专业设置" subtitle="传承荆楚文化，培养创新人才" />
 
-          {/* 单列竖向排列，每排一个 */}
-          <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+          {/* 单列竖向排列，每排一个，卡片与页面对齐 */}
+          <div className="grid grid-cols-1 gap-6">
             {orderedMajors.map((major, index) => (
               <motion.div
                 key={major.id}
