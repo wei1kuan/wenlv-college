@@ -10,7 +10,7 @@ export interface NavItem {
 export const navItems: NavItem[] = [
   {
     id: 1,
-    name: "学院概况",
+    name: "学院简介",
     path: "/about",
   },
   {
@@ -61,7 +61,7 @@ export const navItems: NavItem[] = [
 
 // 底部链接数据
 export const footerLinks = [
-  { id: 1, name: "学院概况", path: "/about" },
+  { id: 1, name: "学院简介", path: "/about" },
   { id: 2, name: "专业设置", path: "/majors" },
   { id: 3, name: "教学科研", path: "/teaching" },
   { id: 4, name: "学生工作", path: "/students" },
