@@ -208,25 +208,25 @@ export const projectsData: ProjectItem[] = [
     id: 1,
     name: "荆楚漆艺创新设计",
     description: "将传统楚式漆艺与现代家居设计相结合，打造具有荆楚特色的当代生活美学产品。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=传统楚式漆艺工艺品，红黑金配色，精美纹样，现代展示&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-1/400/533",
   },
   {
     id: 2,
     name: "汉绣文化传承计划",
     description: "系统整理汉绣技艺，培养新一代传承人，开发汉绣文创产品，让传统刺绣焕发新生。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=精美汉绣作品，传统刺绣工艺，花鸟图案，细腻针法&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-2/400/533",
   },
   {
     id: 3,
     name: "非遗数字博物馆",
     description: "运用数字技术建设虚拟博物馆，让珍贵的非遗文物以数字化形式永久保存并广泛传播。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字博物馆展厅，全息投影展示，传统文化与现代科技融合&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-3/400/533",
   },
   {
     id: 4,
     name: "文旅IP形象设计",
     description: "以荆楚文化元素为灵感，设计系列文旅IP形象，打造具有地域特色的文化品牌。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=可爱的文旅IP形象，融合楚文化元素，现代卡通风格，色彩鲜明&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-4/400/533",
   },
 ];
 
@@ -246,7 +246,7 @@ export const majorsData: MajorItem[] = [
     id: 1,
     name: "数字非遗设计与制作",
     description: "本专业是学院重点建设专业，融合数字技术与非遗文化传承，培养具备传统工艺数字化保护、非遗文创产品设计、数字展示交互设计能力的复合型人才。学生将学习3D建模、虚拟现实、数字影像等前沿技术，同时深入掌握荆楚传统工艺精髓。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字非遗设计，传统手工艺与现代科技融合，3D建模展示，荆楚文化元素，专业教学场景&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-5/600/400",
     isFeatured: true,
     detailPath: "/majors/digital-heritage",
   },
@@ -254,37 +254,37 @@ export const majorsData: MajorItem[] = [
     id: 2,
     name: "环境艺术设计",
     description: "培养具有艺术素养和设计创新能力的环境艺术设计人才，掌握室内设计、景观设计、展示设计等专业技能，能够从事各类空间环境的设计与规划工作。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=环境艺术设计作品展示，现代室内设计，景观规划，空间美学，专业设计工作室&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-6/600/400",
   },
   {
     id: 3,
     name: "产品艺术设计",
     description: "培养具有创新设计思维和实践能力的产品设计人才，学习产品设计理论、材料工艺、人机工程学等知识，能够进行产品外观设计、结构设计和包装设计。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=产品艺术设计，创意产品设计，现代工业设计，文创产品展示，设计工作室&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-7/600/400",
   },
   {
     id: 4,
     name: "旅游管理",
     description: "培养具备现代旅游管理理论和实践能力的专业人才，学习旅游规划、景区管理、旅游营销等知识，能够在旅游企业、景区、文旅机构从事管理工作。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=旅游管理专业，景区规划展示，文旅项目，导游培训，旅游服务场景&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-8/600/400",
   },
   {
     id: 5,
     name: "酒店管理与数字化运营",
     description: "培养掌握现代酒店管理理论和数字化运营技能的专业人才，学习酒店运营、客户服务、收益管理等知识，能够胜任星级酒店管理岗位。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=酒店管理专业，星级酒店大堂，数字化运营系统，酒店服务培训，现代酒店管理&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-9/600/400",
   },
   {
     id: 6,
     name: "播音与主持",
     description: "培养具有良好语言表达能力和艺术素养的播音主持人才，学习播音发声、节目主持、新闻采编等专业技能，能够从事广播电视、新媒体主持工作。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=播音与主持专业，专业演播室，主播培训，话筒与摄像机，播音主持场景&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-10/600/400",
   },
   {
     id: 7,
     name: "表演艺术",
     description: "培养具有扎实表演功底和艺术创造力的表演人才，学习表演技巧、形体训练、声乐等课程，能够在文艺团体、影视机构从事表演工作。",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=表演艺术专业，舞台表演，演员培训，戏剧排练，艺术表演场景&image_size=landscape_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-11/600/400",
   },
 ];
 
@@ -295,7 +295,7 @@ export const introData = {
   description: `学院紧扣文化强省建设总体任务，抢抓数字文旅融合创新发展时代趋势，依托湖北省高水平高职院校建设平台和荆楚非遗传承与创新实践中心特色载体，发挥光谷片区、武汉新城区位优势，践行专业集群协调发展、跨专业交叉融合育人建设路径，打造彰显荆楚文脉、赋能数字文旅的特色办学品牌。
 
 学院秉承"数创智行、以文塑旅、以旅彰文"的办学理念，聚焦设计数字化、非遗产业化、服务智慧化、文旅全域化，培育厚德精技复合型人才，主动对接武汉都市圈发展建设，以集群育人优势助推湖北文旅转型升级，持续输送优质人才与创新动能，以职教之力护航区域文旅融合高质量发展。`,
-  imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=荆楚非遗文化展示，传统手工艺品，现代设计融合&image_size=portrait_4_3",
+  imageUrl: "https://picsum.photos/seed/wenlv-12/400/533",
 };
 
 // 领导团队数据
@@ -311,25 +311,25 @@ export const leadershipData: Leader[] = [
     id: 1,
     name: "汪帆",
     position: "学院院长",
-    photoUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional male portrait, middle-aged Chinese man, formal suit, office setting, academic leader, friendly expression&image_size=portrait_4_3",
+    photoUrl: "https://picsum.photos/seed/wenlv-13/400/533",
   },
   {
     id: 2,
     name: "滕亚东",
     position: "党总支书记",
-    photoUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional male portrait, middle-aged Chinese man, formal attire, confident demeanor, party secretary&image_size=portrait_4_3",
+    photoUrl: "https://picsum.photos/seed/wenlv-14/400/533",
   },
   {
     id: 3,
     name: "石焰",
     position: "总支副书记",
-    photoUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional female portrait, middle-aged Chinese woman, formal suit, elegant, university administrator&image_size=portrait_4_3",
+    photoUrl: "https://picsum.photos/seed/wenlv-15/400/533",
   },
   {
     id: 4,
     name: "欧阳琼",
     position: "教学副院长",
-    photoUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional female portrait, middle-aged Chinese woman, academic dress, glasses, professor&image_size=portrait_4_3",
+    photoUrl: "https://picsum.photos/seed/wenlv-16/400/533",
   },
 ];
 
@@ -353,7 +353,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "叶画是一种独特的传统艺术形式，以天然树叶为载体，运用传统绘画技法在叶片上创作精美图案。课程教授叶材处理、构图设计、上色技法等核心技能。",
     duration: "32学时",
     icon: "🍃",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=中国传统叶画艺术，精美树叶绘画，山水花鸟图案，传统工艺，细腻笔触&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-17/400/533",
   },
   {
     id: 2,
@@ -362,7 +362,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "缠花是荆楚地区传统手工艺，以丝线缠绕金属丝制作花卉造型。课程涵盖缠花基础技法、花卉造型设计、色彩搭配等内容，培养学员创作精美缠花作品的能力。",
     duration: "48学时",
     icon: "🌸",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=精美缠花工艺品，丝线缠绕花卉，传统手工艺，色彩鲜艳，立体花卉造型&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-18/400/533",
   },
   {
     id: 3,
@@ -371,7 +371,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "西兰卡普是土家族传统织锦技艺，被誉为'土家之花'。课程系统传授织锦工艺、图案设计、配色技巧，让学员掌握这一国家级非物质文化遗产的核心技艺。",
     duration: "64学时",
     icon: "🧵",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=西兰卡普土家族织锦，传统织布机，精美几何图案，民族特色，色彩斑斓&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-19/400/533",
   },
   {
     id: 4,
@@ -380,7 +380,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "雕花剪纸是荆楚地区特色剪纸艺术，以精细的雕刻技艺著称。课程教授剪纸设计、刀法运用、图案创作等技法，传承这一独特的民间艺术形式。",
     duration: "40学时",
     icon: "✂️",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=精美雕花剪纸作品，传统民间艺术，红色剪纸，细腻花纹，节日装饰&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-20/400/533",
   },
   {
     id: 5,
@@ -389,7 +389,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "汉绣是江汉地区传统刺绣工艺，以色彩艳丽、针法多变著称。课程涵盖汉绣历史、针法技法、图案设计等内容，培养学员传承和创新汉绣技艺的能力。",
     duration: "72学时",
     icon: "🪡",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=精美汉绣作品，传统刺绣工艺，花鸟图案，细腻针法，色彩艳丽&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-21/400/533",
   },
   {
     id: 6,
@@ -398,7 +398,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "书法是中国传统文化瑰宝，课程系统教授楷书、行书、隶书等书体技法，结合荆楚书法特色，培养学员的书法创作能力和艺术鉴赏水平。",
     duration: "48学时",
     icon: "🖌️",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=中国传统书法艺术，毛笔字，楷书行书，墨迹飞舞，书法作品展示&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-22/400/533",
   },
   {
     id: 7,
@@ -407,7 +407,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "漆扇制作融合传统漆艺与扇艺，课程教授漆艺基础、扇面设计、装饰技法等，让学员掌握漆扇制作的完整工艺流程，创作具有艺术价值的漆扇作品。",
     duration: "56学时",
     icon: "🪭",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=精美漆扇工艺品，传统漆艺扇子，红黑金配色，精美纹样，中国风&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-23/400/533",
   },
   {
     id: 8,
@@ -416,7 +416,7 @@ export const digitalHeritageCourses: DigitalHeritageCourse[] = [
     description: "茶艺课程系统传授中国茶文化知识、泡茶技艺、茶道礼仪等内容，结合荆楚茶文化特色，培养学员的茶艺表演能力和茶文化传播素养。",
     duration: "32学时",
     icon: "🍵",
-    imageUrl: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=中国传统茶艺表演，功夫茶道，茶具展示，优雅茶席，茶文化氛围&image_size=portrait_4_3",
+    imageUrl: "https://picsum.photos/seed/wenlv-24/400/533",
   },
 ];
 

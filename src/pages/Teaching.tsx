@@ -30,7 +30,7 @@ const teachingAchievements = [
     category: "课程建设",
     description: "《荆楚非遗文化传承与创新》课程获批国家级精品在线开放课程，累计学习人数超过10万人。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=在线课程界面，现代化教学平台，电脑屏幕显示课程内容，专业教育氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-65/600/400",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const teachingAchievements = [
     category: "教学竞赛",
     description: "教学团队在全国职业院校教学能力大赛中荣获一等奖，展现了学院教师的教学水平和创新能力。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=教学比赛颁奖现场，教师团队领奖，荣誉证书，热烈氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-66/600/400",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const teachingAchievements = [
     category: "教学成果",
     description: "'非遗传承与现代设计融合人才培养模式'获湖北省高等教育教学成果特等奖。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=教学成果奖证书，红色封面，金色文字，庄重典雅&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-67/600/400",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ const teachingAchievements = [
     category: "教材建设",
     description: "《文创产品设计与实践》入选'十四五'职业教育国家规划教材，被多所院校采用。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=专业教材书籍封面，文创设计主题，精美装帧，学术氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-68/600/400",
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const teachingAchievements = [
     category: "学生成果",
     description: "学生创业项目'楚韵文创工作室'在'互联网+'大学生创新创业大赛中斩获金奖。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学生创新创业大赛现场，学生展示项目，金奖奖杯，青春活力&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-69/600/400",
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ const teachingAchievements = [
     category: "团队建设",
     description: "非遗传承与创新教学团队被评为湖北省优秀教学团队，团队成员包括省级教学名师3人。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=教师团队合影，专业正装，学术氛围，团队协作精神&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-70/600/400",
   },
 ];
 
@@ -91,7 +91,7 @@ const researchProjects = [
     status: "在研",
     description: "研究荆楚地区非物质文化遗产的数字化保护技术，建立非遗数字资源库，探索数字化传承新模式。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字化保护技术，非遗文化展示，现代科技与传统工艺结合，学术研究氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-71/600/400",
   },
   {
     id: 2,
@@ -103,7 +103,7 @@ const researchProjects = [
     status: "在研",
     description: "研究文旅融合背景下文创产品的设计创新方法，开发具有荆楚特色的文创产品系列。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=文创产品设计工作室，设计师工作场景，创意产品展示，现代设计氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-72/600/400",
   },
   {
     id: 3,
@@ -115,7 +115,7 @@ const researchProjects = [
     status: "在研",
     description: "研究VR/AR技术在非遗展示中的应用，开发沉浸式非遗体验系统，提升非遗传播效果。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR虚拟现实技术应用，非遗文化展示，科技感，现代博物馆场景&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-73/600/400",
   },
   {
     id: 4,
@@ -127,7 +127,7 @@ const researchProjects = [
     status: "已启动",
     description: "对荆楚地区传统手工艺传承人进行口述史调研，记录和保存珍贵的非遗传承资料。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=传统手工艺人工作场景，口述史访谈，文化传承氛围，温馨画面&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-74/600/400",
   },
   {
     id: 5,
@@ -139,7 +139,7 @@ const researchProjects = [
     status: "在研",
     description: "研究数字媒体艺术在文旅推广中的应用策略，为地方文旅发展提供技术支持。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字媒体艺术展示，文旅宣传场景，创意设计，现代科技感&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-75/600/400",
   },
   {
     id: 6,
@@ -151,7 +151,7 @@ const researchProjects = [
     status: "已立项",
     description: "探索产教融合背景下非遗传承人才的培养模式，形成可推广的人才培养方案。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=产教融合教学场景，学生实践学习，校企合作，现代教育氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-76/600/400",
   },
 ];
 
@@ -165,7 +165,7 @@ const academicExchanges = [
     location: "武汉",
     description: "邀请国内外非遗研究专家学者，共同探讨非遗传承与创新的路径与方法。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=国际学术研讨会现场，专家学者演讲，现代化会议厅，学术氛围浓厚&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-77/600/400",
   },
   {
     id: 2,
@@ -175,7 +175,7 @@ const academicExchanges = [
     location: "韩国首尔",
     description: "学院代表团赴韩国参加中日韩文化遗产保护技术交流会，分享非遗数字化保护经验。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=国际文化交流活动现场，多国学者合影，友好交流氛围，现代化会场&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-78/600/400",
   },
   {
     id: 3,
@@ -185,7 +185,7 @@ const academicExchanges = [
     location: "武汉",
     description: "主办湖北省高校文创设计教育论坛，探讨文创设计人才培养的创新模式。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=高校教育论坛现场，专家学者讨论，现代化会议设施，学术交流氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-79/600/400",
   },
   {
     id: 4,
@@ -195,7 +195,7 @@ const academicExchanges = [
     location: "学院",
     description: "邀请多位国家级、省级非遗传承人进校园，开展技艺展示和传承教学活动。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=非遗传承人教学现场，学生围观学习，传统工艺展示，校园文化活动&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-80/600/400",
   },
   {
     id: 5,
@@ -205,7 +205,7 @@ const academicExchanges = [
     location: "学院",
     description: "举办数字艺术与传统文化融合工作坊，探索传统文化与现代技术的创新结合。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=艺术工作坊现场，学生动手实践，数字艺术创作，创意设计氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-81/600/400",
   },
   {
     id: 6,
@@ -215,7 +215,7 @@ const academicExchanges = [
     location: "台湾",
     description: "学院代表团赴台湾高校进行文化创意产业交流访问，深化两岸教育合作。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=两岸文化交流活动，高校访问场景，友好合作氛围，文化创意展示&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-82/600/400",
   },
 ];
 

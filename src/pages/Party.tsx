@@ -10,21 +10,21 @@ const partyBuildingActivities = [
     title: "学习贯彻党的二十大精神专题讲座",
     date: "2026-07-15",
     summary: "学院党委组织全体师生党员深入学习党的二十大精神，推动党的创新理论入脑入心。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=party%20meeting%20lecture%20hall%20red%20flag%20professional&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-39/600/400",
   },
   {
     id: 2,
     title: "党员志愿服务进社区活动",
     date: "2026-07-10",
     summary: "学院党员志愿者走进社区，开展非遗文化宣传与体验活动，服务群众文化生活。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=volunteers%20community%20service%20warm%20smile&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-40/600/400",
   },
   {
     id: 3,
     title: "主题党日活动——红色教育基地参观",
     date: "2026-06-28",
     summary: "组织党员前往红色教育基地参观学习，缅怀革命先烈，传承红色基因。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=red%20memorial%20hall%20solemn%20atmosphere&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-41/600/400",
   },
 ];
 
@@ -35,21 +35,21 @@ const youthActivities = [
     title: "非遗文化传承青年论坛",
     date: "2026-07-20",
     summary: "学院团委举办青年论坛，邀请非遗传承人与学生面对面交流，激发青年传承热情。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=youth%20forum%20discussion%20modern%20bright&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-42/600/400",
   },
   {
     id: 2,
     title: "迎七一志愿服务月活动",
     date: "2026-07-05",
     summary: "团学组织开展迎七一志愿服务系列活动，践行志愿服务精神，展现青年担当。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=students%20volunteering%20helping%20others&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-43/600/400",
   },
   {
     id: 3,
     title: "荆楚文化青年创意大赛",
     date: "2026-06-20",
     summary: "举办创意设计大赛，鼓励青年学生以创新方式传承和弘扬荆楚文化。",
-    image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=creative%20competition%20art%20design%20youth&image_size=landscape_4_3",
+    image: "https://picsum.photos/seed/wenlv-44/600/400",
   },
 ];
 

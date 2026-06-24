@@ -29,7 +29,7 @@ const studentActivities = [
     date: "2026年7月",
     description: "一年一度的荆楚文化节，展示学生非遗作品，传承传统文化精髓，吸引众多师生参与。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学生文化节活动现场，传统非遗展示，学生表演，热闹氛围，中国文化元素&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-45/600/400",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const studentActivities = [
     date: "2026年6月",
     description: "学生展示剪纸、刺绣、陶艺等非遗技艺，传承匠人精神，弘扬传统文化。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学生非遗技艺比赛现场，剪纸刺绣展示，传统工艺，专注认真&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-46/600/400",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const studentActivities = [
     date: "2026年7月",
     description: "学生文创设计作品展览，融合荆楚文化元素与现代设计理念，展现创意才华。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=文创设计展览现场，学生作品展示，现代设计风格，艺术氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-47/600/400",
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const studentActivities = [
     date: "2026年6月",
     description: "深入荆楚地区开展文化调研，了解非遗传承现状，撰写调研报告。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学生社会实践调研，乡村走访，记录访谈，团队合作&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-48/600/400",
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const studentActivities = [
     date: "2026年7月",
     description: "师生共庆毕业季，精彩节目纷呈，展现学生才艺与青春活力。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学毕业晚会现场，舞台表演，灯光璀璨，青春活力&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-49/600/400",
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ const studentActivities = [
     date: "2026年6月",
     description: "走进社区开展文化志愿服务，传播非遗知识，服务社会大众。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=大学生志愿服务活动，社区服务，文化传播，热情服务&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-50/600/400",
   },
 ];
 
@@ -82,7 +82,7 @@ const clubs = [
     description: "致力于非遗技艺学习与传承，定期开展剪纸、刺绣、陶艺等传统技艺培训。",
     activities: ["剪纸工坊", "刺绣体验", "陶艺制作"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=学生社团活动，非遗传承，传统手工艺，学生认真学习&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-51/600/400",
   },
   {
     id: 2,
@@ -91,7 +91,7 @@ const clubs = [
     description: "融合传统文化与现代设计，开展文创产品设计、品牌策划等活动。",
     activities: ["文创设计大赛", "品牌策划", "产品开发"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=文创设计社团活动，学生讨论设计，创意氛围，现代工作室&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-52/600/400",
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ const clubs = [
     description: "探索数字技术与文化融合，开展影视制作、动画设计、新媒体运营等。",
     activities: ["短片拍摄", "动画制作", "新媒体运营"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字媒体社团活动，学生操作设备，影视拍摄，专业氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-53/600/400",
   },
   {
     id: 4,
@@ -109,7 +109,7 @@ const clubs = [
     description: "弘扬汉服文化，开展汉服展示、传统礼仪学习、古风摄影等活动。",
     activities: ["汉服展示", "礼仪学习", "古风摄影"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=汉服社团活动，学生穿汉服，传统文化展示，优雅古典&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-54/600/400",
   },
   {
     id: 5,
@@ -118,7 +118,7 @@ const clubs = [
     description: "传承书法绘画艺术，开展书法、国画、篆刻等传统艺术学习与创作。",
     activities: ["书法练习", "国画创作", "篆刻体验"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=书法绘画社团活动，学生练习书法，传统艺术氛围，文房四宝&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-55/600/400",
   },
   {
     id: 6,
@@ -127,7 +127,7 @@ const clubs = [
     description: "学习茶艺文化，开展茶道表演、茶文化讲座、茶叶品鉴等活动。",
     activities: ["茶道表演", "茶文化讲座", "茶叶品鉴"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=茶艺社团活动，学生学习茶艺，茶道表演，优雅氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-56/600/400",
   },
 ];
 
@@ -141,7 +141,7 @@ const awards = [
     year: "2026",
     level: "国家级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=金奖奖杯，荣誉证书，颁奖典礼，庄重氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-57/600/400",
   },
   {
     id: 2,
@@ -151,7 +151,7 @@ const awards = [
     year: "2026",
     level: "省级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=一等奖奖牌，获奖证书，荣誉展示，红色背景&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-58/600/400",
   },
   {
     id: 3,
@@ -161,7 +161,7 @@ const awards = [
     year: "2026",
     level: "国家级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=技能大赛颁奖现场，学生领奖，荣誉时刻，热烈氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-59/600/400",
   },
   {
     id: 4,
@@ -171,7 +171,7 @@ const awards = [
     year: "2026",
     level: "国家级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=创新创业大赛颁奖，团队领奖，银奖奖杯，现代氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-60/600/400",
   },
   {
     id: 5,
@@ -181,7 +181,7 @@ const awards = [
     year: "2026",
     level: "省级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=艺术节表演现场，汉服展示，舞台表演，精彩瞬间&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-61/600/400",
   },
   {
     id: 6,
@@ -191,7 +191,7 @@ const awards = [
     year: "2026",
     level: "国家级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字媒体大赛获奖证书，二等奖奖牌，专业氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-62/600/400",
   },
   {
     id: 7,
@@ -201,7 +201,7 @@ const awards = [
     year: "2026",
     level: "省级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=书法作品展览，获奖作品展示，传统文化氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-63/600/400",
   },
   {
     id: 8,
@@ -211,7 +211,7 @@ const awards = [
     year: "2026",
     level: "国家级",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=茶艺表演比赛，优雅茶道，传统文化展示&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-64/600/400",
   },
 ];
 

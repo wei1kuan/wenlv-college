@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import banner1 from '../assets/banner1.png';
+import banner2 from '../assets/banner2.jpg';
 
 interface CarouselSlide {
   id: number;
@@ -12,13 +14,13 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    imageUrl: '/2.jpg',
+    imageUrl: banner2,
     title: '非遗文化展示馆',
     subtitle: '传承荆楚文脉 弘扬非遗技艺'
   },
   {
     id: 2,
-    imageUrl: '/1.PNG',
+    imageUrl: banner1,
     title: '叶画特色展厅',
     subtitle: '匠心独具 一叶一世界'
   }

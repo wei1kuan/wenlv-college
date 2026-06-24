@@ -29,7 +29,7 @@ const partnerCompanies = [
     type: "文化机构",
     description: "共同开展荆楚非遗文化研究与传承项目，为学生提供实习实训平台。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=湖北省博物馆建筑外观，现代博物馆设计，庄重大气，蓝天白云&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-25/600/400",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const partnerCompanies = [
     type: "文旅企业",
     description: "合作开发文创产品，推动文旅融合项目落地，培养文旅策划人才。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=现代文旅企业大楼，玻璃幕墙，城市景观，专业商务氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-26/600/400",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const partnerCompanies = [
     type: "设计企业",
     description: "联合开展文创设计项目，提供设计实习岗位，共同孵化创业项目。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=创意设计公司办公空间，现代简约风格，设计师工作环境&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-27/600/400",
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const partnerCompanies = [
     type: "科技企业",
     description: "数字媒体技术合作，VR/AR项目开发，新媒体人才培养基地。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=科技公司办公环境，现代化数字媒体工作室，科技感&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-28/600/400",
   },
 ];
 
@@ -66,7 +66,7 @@ const cooperationProjects = [
     status: "进行中",
     description: "运用数字化技术对荆楚地区非物质文化遗产进行采集、记录和保护。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=非遗数字化保护工作现场，技术人员操作设备，文化遗产记录&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-29/600/400",
   },
   {
     id: 2,
@@ -75,7 +75,7 @@ const cooperationProjects = [
     status: "已完成",
     description: "设计武汉城市文旅IP形象及系列文创产品，提升城市文化影响力。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=文旅IP形象设计展示，卡通形象，文创产品周边，创意设计&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-30/600/400",
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ const cooperationProjects = [
     status: "进行中",
     description: "打造沉浸式非遗文化体验展览，融合科技与传统工艺展示。",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=沉浸式展览空间，光影效果，观众互动体验，现代展示技术&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-31/600/400",
   },
 ];
 
@@ -98,7 +98,7 @@ const internshipBases = [
     description: "提供文物修复、展览策划、社教活动等实习岗位，年接纳实习生50余人。",
     features: ["文物修复", "展览策划", "社教活动"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=博物馆实习基地，学生在工作，专业设备，学习氛围&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-32/600/400",
   },
   {
     id: 2,
@@ -108,7 +108,7 @@ const internshipBases = [
     description: "专注于文创产品设计与开发，学生参与从创意到产品的全流程实践。",
     features: ["产品设计", "市场调研", "品牌推广"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=黄鹤楼景区，学生文创实习，产品设计工作坊&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-33/600/400",
   },
   {
     id: 3,
@@ -118,7 +118,7 @@ const internshipBases = [
     description: "景区运营管理、活动策划执行、游客服务等综合实习平台。",
     features: ["景区运营", "活动策划", "游客服务"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=东湖风景区，学生实习工作，景区管理，湖光山色&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-34/600/400",
   },
   {
     id: 4,
@@ -128,7 +128,7 @@ const internshipBases = [
     description: "数字内容制作、新媒体运营、短视频创作等新媒体实习实践。",
     features: ["视频制作", "新媒体运营", "内容创作"],
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=数字媒体产业园，学生实习，视频拍摄制作，现代办公环境&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-35/600/400",
   },
 ];
 
@@ -142,7 +142,7 @@ const innovationProjects = [
     description: "将荆楚传统工艺与现代设计结合，开发系列文创产品，已获得省级创业扶持。",
     status: "已孵化",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=文创工坊，传统工艺品展示，现代设计产品，创业团队&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-36/600/400",
   },
   {
     id: 2,
@@ -152,7 +152,7 @@ const innovationProjects = [
     description: "运用VR/AR技术打造线上非遗博物馆，实现非遗文化的数字化传播。",
     status: "运营中",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR虚拟博物馆体验，数字技术展示非遗，科技感&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-37/600/400",
   },
   {
     id: 3,
@@ -162,7 +162,7 @@ const innovationProjects = [
     description: "专注荆楚传统手工艺直播推广，连接手艺人与消费者，助力非遗传承。",
     status: "运营中",
     imageUrl:
-      "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=手工艺直播现场，传统工艺展示，新媒体工作室&image_size=landscape_4_3",
+      "https://picsum.photos/seed/wenlv-38/600/400",
   },
 ];
 
