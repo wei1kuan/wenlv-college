@@ -13,36 +13,223 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 自定义滚动条样式 */
+/* ── 自定义滚动条（漆器红配色）── */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #EFF6FF;
+  background: #F0EAE3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E40AF;
+  background: #8B2E2E;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1E3A8A;
+  background: #3A1010;
 }
 
-/* 页面平滑滚动 */
+/* ── 页面平滑滚动 ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* 标题字体 */
+/* ── 全局背景纸纹肌理（全幅延展）── */
+body {
+  background-color: #F5F0EB;
+  background-image:
+    /* 横向纤维纹理 */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(122, 42, 42, 0.01) 2px,
+      rgba(122, 42, 42, 0.01) 4px
+    ),
+    /* 菱形暗纹网格 — 传统纹样延伸至全屏 */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(212, 165, 32, 0.015) 40px,
+      rgba(212, 165, 32, 0.015) 41px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(212, 165, 32, 0.015) 40px,
+      rgba(212, 165, 32, 0.015) 41px
+    ),
+    /* 暖金噪点纹理 */
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(212, 165, 32, 0.04) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 85% 30%,
+      rgba(122, 42, 42, 0.03) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(212, 165, 32, 0.02) 0%,
+      transparent 50%
+    );
+}
+
+/* ── 全宽纹饰底纹 — 用于大区块分隔 ── */
+.pattern-bg {
+  background-color: #F5F0EB;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(212, 165, 32, 0.02) 3px, rgba(212, 165, 32, 0.02) 5px);
+}
+
+/* ── 标题字体 ── */
 .font-display {
   font-family: "Noto Serif SC", serif;
 }
 
-/* 正文字体 */
+/* ── 正文字体 ── */
 .font-body {
   font-family: "Noto Sans SC", sans-serif;
+}
+
+/* ── 中式传统书法字体 ── */
+.font-chinese {
+  font-family: "Long Cang", "ZCOOL KuaiLe", "Noto Serif SC", serif;
+  font-weight: 400;
+}
+
+/* ── 漆器光泽渐变效果 ── */
+@layer utilities {
+  .lacquer-shine {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  }
+
+  .lacquer-border {
+    border-image: linear-gradient(
+      135deg,
+      #E8C547 0%,
+      #8B6914 25%,
+      #E8C547 50%,
+      #8B6914 75%,
+      #E8C547 100%
+    ) 1;
+  }
+
+  .lacquer-gradient {
+    background: linear-gradient(
+      135deg,
+      #8B2E2E 0%,
+      #5C1818 40%,
+      #3A1010 100%
+    );
+  }
+
+  /* 鎏金文字效果 */
+  .text-gold-lacquer {
+    background: linear-gradient(180deg, #E8C54A 0%, #E8C547 40%, #8B6914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ── 传统纹饰动画 ── */
+@keyframes pattern-fade {
+  from { opacity: 0.3; }
+  to { opacity: 0.6; }
+}
+
+.pattern-animate {
+  animation: pattern-fade 3s ease-in-out infinite alternate;
+}
+
+/* ── 全局交互动画 ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 197, 71, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(232, 197, 71, 0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 46, 46, 0.12);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* 按钮涟漪效果 */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn-ripple:active::after {
+  opacity: 1;
+  transform: scale(10);
+  transition: transform 0.5s, opacity 0.3s;
+}
+
+/* 卡片悬浮光效 */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-shine:hover::before {
+  left: 150%;
 }

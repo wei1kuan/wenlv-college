@@ -1,29 +1,18 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { projectsData, ProjectItem } from "@/data/mockData";
 
 interface ProjectCardProps {
   project: ProjectItem;
-  index: number;
 }
 
-function ProjectCard({ project, index }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ scale: 1.03 }}
       className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={project.imageUrl}
-          alt={project.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-        />
+      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-heritage-primary/40 via-heritage-secondary/30 to-heritage-gold/40">
         <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -52,26 +41,20 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 export default function ProjectsSection() {
   return (
     <section className="py-20 bg-heritage-cream">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1600px] mx-auto px-4">
         <SectionTitle title="特色项目" subtitle="探索荆楚文化创新实践" />
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <button className="px-8 py-3 border-2 border-heritage-primary text-heritage-primary rounded-full font-medium hover:bg-heritage-secondary hover:text-white transition-all duration-300">
             查看全部项目
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

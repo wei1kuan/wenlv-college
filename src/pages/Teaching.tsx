@@ -1,423 +1,169 @@
-import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SectionTitle from "@/components/SectionTitle";
-import { Users, GraduationCap } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { LayoutList, LayoutGrid } from 'lucide-react';
+import SectionTitle from '@/components/SectionTitle';
+import TabNewsLayout from '@/components/TabNewsLayout';
+import { teachingNews } from '@/data/mockData';
 
-// 页面淡入动画配置
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
+type ViewMode = 'card' | 'list';
+
+/** Hash → Tab 映射 */
+const hashTabMap: Record<string, string> = {
+  'teaching-achievements': 'teaching',
+  'research-projects': 'research',
+  'academic-exchanges': 'academic',
 };
-
-const sectionVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { staggerChildren: 0.2 } },
-};
-
-const itemVariants = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-};
-
-// 教学成果数据
-const teachingAchievements = [
-  {
-    id: 1,
-    title: "国家级精品在线开放课程",
-    year: "2026",
-    category: "课程建设",
-    description: "《荆楚非遗文化传承与创新》课程获批国家级精品在线开放课程，累计学习人数超过10万人。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-65/600/400",
-  },
-  {
-    id: 2,
-    title: "全国职业院校教学能力大赛一等奖",
-    year: "2026",
-    category: "教学竞赛",
-    description: "教学团队在全国职业院校教学能力大赛中荣获一等奖，展现了学院教师的教学水平和创新能力。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-66/600/400",
-  },
-  {
-    id: 3,
-    title: "省级教学成果奖特等奖",
-    year: "2026",
-    category: "教学成果",
-    description: "'非遗传承与现代设计融合人才培养模式'获湖北省高等教育教学成果特等奖。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-67/600/400",
-  },
-  {
-    id: 4,
-    title: "国家级规划教材",
-    year: "2026",
-    category: "教材建设",
-    description: "《文创产品设计与实践》入选'十四五'职业教育国家规划教材，被多所院校采用。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-68/600/400",
-  },
-  {
-    id: 5,
-    title: "学生创新创业大赛金奖",
-    year: "2026",
-    category: "学生成果",
-    description: "学生创业项目'楚韵文创工作室'在'互联网+'大学生创新创业大赛中斩获金奖。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-69/600/400",
-  },
-  {
-    id: 6,
-    title: "省级优秀教学团队",
-    year: "2026",
-    category: "团队建设",
-    description: "非遗传承与创新教学团队被评为湖北省优秀教学团队，团队成员包括省级教学名师3人。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-70/600/400",
-  },
-];
-
-// 科研项目数据
-const researchProjects = [
-  {
-    id: 1,
-    title: "荆楚非物质文化遗产数字化保护与传承研究",
-    level: "国家级",
-    category: "社科基金",
-    leader: "张明远",
-    year: "2026-2029",
-    status: "在研",
-    description: "研究荆楚地区非物质文化遗产的数字化保护技术，建立非遗数字资源库，探索数字化传承新模式。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-71/600/400",
-  },
-  {
-    id: 2,
-    title: "文旅融合背景下文创产品设计创新研究",
-    level: "省部级",
-    category: "艺术基金",
-    leader: "陈晓燕",
-    year: "2026-2028",
-    status: "在研",
-    description: "研究文旅融合背景下文创产品的设计创新方法，开发具有荆楚特色的文创产品系列。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-72/600/400",
-  },
-  {
-    id: 3,
-    title: "虚拟现实技术在非遗展示中的应用研究",
-    level: "省部级",
-    category: "科技计划",
-    leader: "王建国",
-    year: "2026-2028",
-    status: "在研",
-    description: "研究VR/AR技术在非遗展示中的应用，开发沉浸式非遗体验系统，提升非遗传播效果。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-73/600/400",
-  },
-  {
-    id: 4,
-    title: "荆楚传统手工艺传承人口述史研究",
-    level: "省部级",
-    category: "社科基金",
-    leader: "李雅琴",
-    year: "2026.06",
-    status: "已启动",
-    description: "对荆楚地区传统手工艺传承人进行口述史调研，记录和保存珍贵的非遗传承资料。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-74/600/400",
-  },
-  {
-    id: 5,
-    title: "数字媒体艺术在文旅推广中的应用研究",
-    level: "市厅级",
-    category: "软科学",
-    leader: "刘思远",
-    year: "2026-2027",
-    status: "在研",
-    description: "研究数字媒体艺术在文旅推广中的应用策略，为地方文旅发展提供技术支持。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-75/600/400",
-  },
-  {
-    id: 6,
-    title: "产教融合背景下非遗人才培养模式研究",
-    level: "市厅级",
-    category: "教育规划",
-    leader: "赵文华",
-    year: "2026.06",
-    status: "已立项",
-    description: "探索产教融合背景下非遗传承人才的培养模式，形成可推广的人才培养方案。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-76/600/400",
-  },
-];
-
-// 学术交流数据
-const academicExchanges = [
-  {
-    id: 1,
-    title: "2026荆楚非遗传承与创新国际学术研讨会",
-    type: "国际会议",
-    date: "2026年7月",
-    location: "武汉",
-    description: "邀请国内外非遗研究专家学者，共同探讨非遗传承与创新的路径与方法。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-77/600/400",
-  },
-  {
-    id: 2,
-    title: "中日韩文化遗产保护技术交流会",
-    type: "国际交流",
-    date: "2026年6月",
-    location: "韩国首尔",
-    description: "学院代表团赴韩国参加中日韩文化遗产保护技术交流会，分享非遗数字化保护经验。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-78/600/400",
-  },
-  {
-    id: 3,
-    title: "湖北省高校文创设计教育论坛",
-    type: "学术论坛",
-    date: "2026年7月",
-    location: "武汉",
-    description: "主办湖北省高校文创设计教育论坛，探讨文创设计人才培养的创新模式。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-79/600/400",
-  },
-  {
-    id: 4,
-    title: "非遗传承人进校园系列活动",
-    type: "校园活动",
-    date: "2026年6月",
-    location: "学院",
-    description: "邀请多位国家级、省级非遗传承人进校园，开展技艺展示和传承教学活动。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-80/600/400",
-  },
-  {
-    id: 5,
-    title: "数字艺术与传统文化融合工作坊",
-    type: "工作坊",
-    date: "2026年7月",
-    location: "学院",
-    description: "举办数字艺术与传统文化融合工作坊，探索传统文化与现代技术的创新结合。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-81/600/400",
-  },
-  {
-    id: 6,
-    title: "台湾高校文化创意产业交流访问",
-    type: "两岸交流",
-    date: "2026年6月",
-    location: "台湾",
-    description: "学院代表团赴台湾高校进行文化创意产业交流访问，深化两岸教育合作。",
-    imageUrl:
-      "https://picsum.photos/seed/wenlv-82/600/400",
-  },
-];
 
 export default function Teaching() {
+  const location = useLocation();
+  const [viewMode, setViewMode] = useState<ViewMode>('list');
+  const [activeTab, setActiveTab] = useState(() => {
+    const hash = window.location.hash.replace('#', '');
+    return hashTabMap[hash] || 'teaching';
+  });
+
+  // 每次渲染同步 URL hash → activeTab
+  const hashFromUrl = location.hash.replace('#', '');
+  const derivedTab = hashTabMap[hashFromUrl] || activeTab;
+  useEffect(() => {
+    if (hashFromUrl && hashTabMap[hashFromUrl]) {
+      setActiveTab(hashTabMap[hashFromUrl]);
+    }
+  });
+
+  // 浏览器原生 hashchange 兜底
+  useEffect(() => {
+    const onHashChange = () => {
+      const h = window.location.hash.replace('#', '');
+      if (h && hashTabMap[h]) setActiveTab(hashTabMap[h]);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const tabs = [
+    { key: 'teaching', label: '教学成果', items: teachingNews.teaching },
+    { key: 'research', label: '科研项目', items: teachingNews.research },
+    { key: 'academic', label: '学术交流', items: teachingNews.academic },
+  ];
+
+  const currentItems = tabs.find((t) => t.key === activeTab)?.items || [];
+
   return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="min-h-screen bg-heritage-cream font-body"
-    >
-      <Navbar />
-      <main className="pt-24 pb-20">
-        {/* 教学成果区域 */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionTitle
-              title="教学成果"
-              subtitle="教学相长 硕果累累"
-            />
+    <div className="min-h-screen bg-heritage-cream">
+      <main className="pt-20 pb-20">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle title="教学科研" />
 
-            <motion.div
-              variants={sectionVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          {/* ── 视图切换按钮 ── */}
+          <div className="flex items-center justify-end gap-1 mb-6">
+            <span className="text-xs text-gray-400 mr-2">视图：</span>
+            <button
+              onClick={() => setViewMode('list')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg transition-colors ${
+                viewMode === 'list'
+                  ? 'bg-heritage-primary text-white'
+                  : 'text-gray-500 hover:bg-heritage-cream hover:text-heritage-primary'
+              }`}
             >
-              {teachingAchievements.map((achievement) => (
-                <motion.div
-                  key={achievement.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -8 }}
-                  className="bg-heritage-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
-                >
-                  {/* 图片区域 */}
-                  <div className="relative h-52 overflow-hidden">
-                    <img
-                      src={achievement.imageUrl}
-                      alt={achievement.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 to-transparent" />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="bg-white/95 backdrop-blur-sm text-heritage-primary px-3 py-1 rounded-full text-sm font-semibold shadow-sm">
-                        {achievement.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* 内容区域 */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-heritage-primary mb-3 line-clamp-2">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                      {achievement.description}
-                    </p>
-                  </div>
-
-                  {/* 底部装饰 */}
-                  <div className="h-1 bg-gradient-to-r from-heritage-primary via-heritage-gold to-heritage-primary" />
-                </motion.div>
-              ))}
-            </motion.div>
+              <LayoutList className="w-3.5 h-3.5" />
+              列表
+            </button>
+            <button
+              onClick={() => setViewMode('card')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg transition-colors ${
+                viewMode === 'card'
+                  ? 'bg-heritage-primary text-white'
+                  : 'text-gray-500 hover:bg-heritage-cream hover:text-heritage-primary'
+              }`}
+            >
+              <LayoutGrid className="w-3.5 h-3.5" />
+              卡片
+            </button>
           </div>
-        </section>
 
-        {/* 科研项目区域 */}
-        <section className="py-20 bg-heritage-cream">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionTitle
-              title="科研项目"
-              subtitle="科研创新 服务社会"
-            />
+          <AnimatePresence mode="wait">
+            {viewMode === 'list' ? (
+              /* ── 列表模式：目录 + 新闻流 ── */
+              <motion.div
+                key="list"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+              >
+                <TabNewsLayout tabs={tabs} defaultTab={activeTab} />
+              </motion.div>
+            ) : (
+              /* ── 卡片模式：Tab 切换 + 卡片网格 ── */
+              <motion.div
+                key="card"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+              >
+                {/* 卡片模式下的简易 Tab */}
+                <div className="flex gap-2 mb-6 border-b border-heritage-gold/20 pb-3">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.key}
+                      onClick={() => setActiveTab(tab.key)}
+                      className={`px-5 py-2 text-sm font-medium rounded-t-lg transition-colors ${
+                        activeTab === tab.key
+                          ? 'bg-white text-heritage-primary border-t-2 border-heritage-primary -mb-[1px]'
+                          : 'text-gray-500 hover:text-heritage-primary hover:bg-heritage-cream/50'
+                      }`}
+                    >
+                      {tab.label}
+                      <span className="ml-1.5 text-xs text-gray-400">({tab.items.length})</span>
+                    </button>
+                  ))}
+                </div>
 
-            <motion.div
-              variants={sectionVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
-            >
-              {researchProjects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row border border-heritage-gold/10"
-                >
-                  {/* 图片区域 */}
-                  <div className="md:w-2/5 h-48 md:h-auto relative overflow-hidden">
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20" />
-                  </div>
-
-                  {/* 内容区域 */}
-                  <div className="md:w-3/5 p-6 flex flex-col justify-between">
-                    <div>
-                      {/* 标签 */}
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          project.level === "国家级"
-                            ? "bg-heritage-primary text-white"
-                            : project.level === "省部级"
-                            ? "bg-heritage-primary/80 text-white"
-                            : "bg-heritage-gold text-heritage-primary"
-                        }`}>
-                          {project.level}
-                        </span>
+                {/* 卡片网格 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {currentItems.map((item, i) => (
+                    <motion.div
+                      key={item.id}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="bg-white rounded-xl shadow-sm hover:shadow-md border border-heritage-gold/10 overflow-hidden group transition-all"
+                    >
+                      {/* 卡片顶部色条 + 渐变装饰 */}
+                      <div className="relative h-2 bg-gradient-to-r from-heritage-primary via-heritage-gold to-heritage-primary" />
+                      <div className="p-6">
+                        <div className="flex items-center gap-2 text-sm text-gray-400 mb-2">
+                          <span className="w-1 h-1 rounded-full bg-heritage-gold/60" />
+                          {item.date}
+                        </div>
+                        <h4 className="text-lg font-display font-bold text-heritage-primary mb-2 line-clamp-2 group-hover:text-heritage-secondary transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-base text-gray-500 leading-relaxed line-clamp-2">
+                          {item.summary}
+                        </p>
+                        <div className="mt-3 pt-3 border-t border-gray-100 flex justify-end">
+                          <span className="text-sm text-heritage-gold hover:text-heritage-primary transition-colors cursor-pointer">
+                            查看详情 →
+                          </span>
+                        </div>
                       </div>
+                    </motion.div>
+                  ))}
+                </div>
 
-                      {/* 标题 */}
-                      <h3 className="text-lg font-bold text-heritage-primary mb-2 line-clamp-2">
-                        {project.title}
-                      </h3>
-
-                      {/* 描述 */}
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-3">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {/* 底部信息 */}
-                    <div className="flex items-center justify-end text-sm text-gray-500 pt-3 border-t border-gray-100">
-                      <div className="flex items-center gap-1">
-                        <GraduationCap className="w-4 h-4 text-heritage-primary" />
-                        <span>{project.year}</span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* 学术交流区域 */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionTitle
-              title="学术交流"
-              subtitle="开放合作 共同进步"
-            />
-
-            <motion.div
-              variants={sectionVariants}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
-            >
-              {academicExchanges.map((exchange) => (
-                <motion.div
-                  key={exchange.id}
-                  variants={itemVariants}
-                  whileHover={{ y: -8 }}
-                  className="bg-heritage-cream rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-heritage-gold/10"
-                >
-                  {/* 图片区域 */}
-                  <div className="relative h-52 overflow-hidden">
-                    <img
-                      src={exchange.imageUrl}
-                      alt={exchange.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-heritage-primary/80 to-transparent" />
-                  </div>
-
-                  {/* 内容区域 */}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-heritage-primary mb-3 line-clamp-2">
-                      {exchange.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">
-                      {exchange.description}
-                    </p>
-
-                    {/* 时间地点 */}
-                    <div className="flex items-center justify-between text-sm text-gray-600 pt-3 border-t border-heritage-gold/20">
-                      <span className="font-medium text-heritage-primary">{exchange.date}</span>
-                      <span className="text-heritage-primary/70">{exchange.location}</span>
-                    </div>
-                  </div>
-
-                  {/* 底部装饰 */}
-                  <div className="h-1 bg-gradient-to-r from-heritage-primary via-heritage-gold to-heritage-primary" />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+                {/* 空状态 */}
+                {currentItems.length === 0 && (
+                  <div className="py-16 text-center text-gray-400">暂无内容</div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </main>
-      <Footer />
-    </motion.div>
+    </div>
   );
 }

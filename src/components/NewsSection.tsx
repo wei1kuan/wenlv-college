@@ -1,19 +1,14 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import { newsData, NewsItem } from "@/data/mockData";
 
 interface NewsCardProps {
   news: NewsItem;
-  index: number;
 }
 
-function NewsCard({ news, index }: NewsCardProps) {
+function NewsCard({ news }: NewsCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
       className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
     >
@@ -50,27 +45,21 @@ function NewsCard({ news, index }: NewsCardProps) {
 
 export default function NewsSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-heritage-cream">
+      <div className="max-w-[1600px] mx-auto px-4">
         <SectionTitle title="新闻动态" subtitle="了解学院最新资讯" />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {newsData.map((news, index) => (
-            <NewsCard key={news.id} news={news} index={index} />
+          {newsData.map((news) => (
+            <NewsCard key={news.id} news={news} />
           ))}
         </div>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12">
           <button className="px-8 py-3 bg-heritage-secondary text-white rounded-full font-medium hover:bg-heritage-secondary/90 transition-colors shadow-lg hover:shadow-xl">
             查看全部新闻
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

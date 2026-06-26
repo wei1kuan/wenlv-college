@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import banner1 from '../assets/banner1.png';
-import banner2 from '../assets/banner2.jpg';
+import banner1 from '@/assets/banner1.png';
+import banner2 from '@/assets/banner2.jpg';
 
 interface CarouselSlide {
   id: number;
@@ -12,18 +12,8 @@ interface CarouselSlide {
 }
 
 const slides: CarouselSlide[] = [
-  {
-    id: 1,
-    imageUrl: banner2,
-    title: '非遗文化展示馆',
-    subtitle: '传承荆楚文脉 弘扬非遗技艺'
-  },
-  {
-    id: 2,
-    imageUrl: banner1,
-    title: '叶画特色展厅',
-    subtitle: '匠心独具 一叶一世界'
-  }
+  { id: 1, imageUrl: banner2, title: '非遗文化展示馆', subtitle: '传承荆楚文脉　弘扬非遗技艺' },
+  { id: 2, imageUrl: banner1, title: '叶画特色展厅', subtitle: '匠心独具　一叶一世界' },
 ];
 
 export default function Carousel() {
@@ -36,23 +26,15 @@ export default function Carousel() {
     return () => clearInterval(timer);
   }, []);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
-  };
-
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full h-[440px] md:h-[580px] overflow-hidden bg-gray-900 rounded-xl">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="absolute inset-0"
         >
           <img
@@ -60,65 +42,72 @@ export default function Carousel() {
             alt={slides[currentIndex].title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
-          
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-12">
+          {/* 轻量渐变 — 仅底部微暗保证文字可读 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+
+          {/* 文字区域 — 贴底居中，传统排版 */}
+          <div className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-6 md:pb-8 px-6">
             <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-lg"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
             >
-              {/* 左侧装饰 */}
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-px bg-white/80" />
-                <div className="w-2 h-2 border-t border-l border-white/60 rotate-45 ml-3" />
+              {/* 金色装饰线 */}
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <div className="w-8 h-px bg-heritage-gold/60" />
+                <div className="w-1.5 h-1.5 rotate-45 border border-heritage-gold/60" />
+                <div className="w-8 h-px bg-heritage-gold/60" />
               </div>
-              
-              <motion.h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white drop-shadow-lg tracking-wider mb-3">
+
+              {/* 主标题 — 书法体 */}
+              <h2
+                className="text-2xl md:text-4xl font-chinese font-bold text-white tracking-[0.25em] drop-shadow-lg"
+                style={{ textShadow: '1px 2px 6px rgba(0,0,0,0.6)' }}
+              >
                 {slides[currentIndex].title}
-              </motion.h2>
-              
-              {/* 分隔线 */}
-              <div className="w-24 h-px bg-gradient-to-r from-white/80 to-white/30 mb-3" />
-              
-              <motion.p className="text-base md:text-lg text-white/90 font-body tracking-wide">
+              </h2>
+
+              {/* 副标题 — 衬线体 */}
+              <p
+                className="mt-3 text-sm md:text-lg text-heritage-gold font-display tracking-[0.2em] drop-shadow"
+                style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
+              >
                 {slides[currentIndex].subtitle}
-              </motion.p>
-              
-              {/* 底部装饰 */}
-              <div className="flex items-center mt-4">
-                <div className="w-2 h-2 border-b border-r border-white/60 rotate-45" />
-                <div className="w-12 h-px bg-white/80 ml-3" />
-              </div>
+              </p>
             </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
 
+      {/* 左右切换 — 金色半透明 */}
       <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+        onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)}
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-heritage-gold/20 hover:bg-heritage-gold/40 hover:scale-110 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+        aria-label="上一张"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
       <button
-        onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+        onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-heritage-gold/20 hover:bg-heritage-gold/40 hover:scale-110 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+        aria-label="下一张"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5" />
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+      {/* 底部金色圆点指示器 */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2.5">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-all duration-300 hover:scale-125 ${
               index === currentIndex
-                ? 'bg-heritage-gold w-8'
-                : 'bg-white/50 hover:bg-white/80'
+                ? 'bg-heritage-gold w-6 h-2.5 animate-pulse-gold'
+                : 'bg-white/40 hover:bg-heritage-gold/60 w-2.5 h-2.5'
             }`}
+            aria-label={`切换到第 ${index + 1} 张`}
           />
         ))}
       </div>

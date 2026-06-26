@@ -1,31 +1,13 @@
 import { motion } from "framer-motion";
 import { Download, FileText, FileSpreadsheet, Presentation, Archive, File } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import SectionTitle from "@/components/SectionTitle";
 import { downloadFilesData, type DownloadFile, type FileCategory, type FileType } from "@/data/mockData";
-
-// 页面淡入动画配置
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-};
-
-const sectionVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-};
 
 // 文件类型图标映射
 const fileTypeIcons: Record<FileType, React.ReactNode> = {
   pdf: <FileText className="w-5 h-5 text-red-500" />,
-  word: <FileText className="w-5 h-5 text-blue-600" />,
+  word: <FileText className="w-5 h-5 text-heritage-primary" />,
   excel: <FileSpreadsheet className="w-5 h-5 text-green-600" />,
   ppt: <Presentation className="w-5 h-5 text-orange-500" />,
   zip: <Archive className="w-5 h-5 text-purple-500" />,
@@ -45,7 +27,7 @@ const fileTypeNames: Record<FileType, string> = {
 // 分类配置
 const categoryConfig: Record<FileCategory, { title: string; subtitle: string; icon: React.ReactNode }> = {
   form: {
-    title: "表格下载",
+    title: "下载中心",
     subtitle: "各类申请表格与模板",
     icon: <FileText className="w-6 h-6" />,
   },
@@ -65,8 +47,7 @@ const categoryConfig: Record<FileCategory, { title: string; subtitle: string; ic
 function FileItem({ file, index }: { file: DownloadFile; index: number }) {
   return (
     <motion.tr
-      variants={itemVariants}
-      whileHover={{ backgroundColor: "rgba(54, 98, 167, 0.05)" }}
+      whileHover={{ backgroundColor: "rgba(122, 42, 42, 0.05)" }}
       className="border-b border-gray-100 hover:border-heritage-primary/20 transition-colors duration-200"
     >
       <td className="px-6 py-4">
@@ -123,19 +104,10 @@ function FileCategorySection({
   const config = categoryConfig[category];
 
   return (
-    <motion.section
-      variants={sectionVariants}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      className="mb-16"
-    >
+    <section className="mb-16">
       <SectionTitle title={config.title} subtitle={config.subtitle} />
 
-      <motion.div
-        variants={itemVariants}
-        className="bg-white rounded-2xl shadow-lg overflow-hidden border border-heritage-gold/10"
-      >
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-heritage-gold/10">
         {/* 表格头部 */}
         <div className="bg-gradient-to-r from-heritage-primary to-heritage-primary/90 px-6 py-5">
           <div className="flex items-center gap-3 text-white">
@@ -176,8 +148,8 @@ function FileCategorySection({
             </tbody>
           </table>
         </div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
 
@@ -186,30 +158,18 @@ export default function Downloads() {
   const formsFiles = downloadFilesData.filter((file) => file.category === "form");
 
   return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="min-h-screen bg-heritage-cream font-body"
-    >
-      <Navbar />
+    <div className="min-h-screen bg-heritage-cream">
 
-      <main className="pt-24 pb-20">
+      <main className="pt-20 pb-20">
         {/* 下载内容区域 */}
-        <section className="py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* 表格下载 */}
+          <div id="form-downloads">
             <FileCategorySection category="form" files={formsFiles} />
+          </div>
 
             {/* 温馨提示 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mt-12 bg-heritage-gold/10 border border-heritage-gold/30 rounded-2xl p-8"
-            >
+            <div className="mt-12 bg-heritage-gold/10 border border-heritage-gold/30 rounded-2xl p-8">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-heritage-gold rounded-full flex items-center justify-center">
                   <FileText className="w-6 h-6 text-heritage-primary" />
@@ -236,12 +196,9 @@ export default function Downloads() {
                   </ul>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </section>
       </main>
-
-      <Footer />
-    </motion.div>
+    </div>
   );
 }

@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import SectionTitle from "@/components/SectionTitle";
+import { HuiwenBorder } from "@/components/HuiwenPattern";
 import { majorsData } from "@/data/mockData";
 import { ArrowRight } from "lucide-react";
 
 export default function Majors() {
-  // 按指定顺序排列专业
   const orderedMajors = [
     "数字非遗设计与制作",
     "环境艺术设计", 
@@ -20,41 +19,21 @@ export default function Majors() {
 
   return (
     <div className="min-h-screen bg-heritage-cream">
-      <Navbar />
 
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="pt-20 pb-20">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle title="专业设置" subtitle="传承荆楚文化，培养创新人才" />
 
           {/* 单列竖向排列，每排一个 */}
-          <div className="grid grid-cols-1 gap-6">
-            {orderedMajors.map((major, index) => (
+          <div className="grid grid-cols-1 gap-6 mt-6">
+            {orderedMajors.map((major) => (
               <motion.div
                 key={major.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex"
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex relative"
               >
-                <div className="w-1/2 min-w-[200px] relative overflow-hidden flex-shrink-0">
-                  {major.detailPath && (
-                    <Link to={major.detailPath} className="block h-full">
-                      <img
-                        src={major.imageUrl}
-                        alt={major.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </Link>
-                  )}
-                  {!major.detailPath && (
-                    <img
-                      src={major.imageUrl}
-                      alt={major.name}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
+                <HuiwenBorder color="rgba(122, 42, 42, 0.3)" />
+                <div className="w-1/2 min-w-[200px] relative overflow-hidden flex-shrink-0 bg-gradient-to-br from-heritage-primary/40 via-heritage-secondary/30 to-heritage-gold/40">
                   <div className="absolute inset-0 bg-gradient-to-r from-heritage-primary/40 to-transparent" />
                 </div>
 
@@ -80,8 +59,6 @@ export default function Majors() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

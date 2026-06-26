@@ -9,13 +9,16 @@ export default {
     },
     extend: {
       colors: {
-        'heritage-primary': '#3662a7',
-        'heritage-secondary': '#3B82F6',
-        'heritage-accent': '#60A5FA',
-        'heritage-dark': '#0F172A',
-        'heritage-light': '#E0F2FE',
-        'heritage-cream': '#F0F9FF',
+        'heritage-primary': '#8B2E2E',
+        'heritage-secondary': '#A04040',
+        'heritage-accent': '#E8C547',
+        'heritage-dark': '#3A1010',
+        'heritage-light': '#F0EAE3',
+        'heritage-cream': '#F5F0EB',
         'heritage-white': '#FFFFFF',
+        'heritage-gold': '#E8C547',
+        'heritage-lacquer': '#5C1818',
+        'heritage-ink': '#200A0A',
       },
       fontFamily: {
         'display': ['Noto Serif SC', 'serif'],
